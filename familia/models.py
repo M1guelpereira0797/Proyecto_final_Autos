@@ -5,4 +5,4 @@ class familia(models.Model):
     direccion = models.CharField(max_length=200)
     numero_pasaporte = models.IntegerField()
     def __str__(self):
-      return f"{self.nombre}, {self.numero_pasaporte}, {self.id}"
+      return f"{self.nombre}, {self.direccion},{self.numero_pasaporte}, {self.id}"
