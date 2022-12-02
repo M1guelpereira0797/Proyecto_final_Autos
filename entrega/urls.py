@@ -18,6 +18,6 @@ from django.urls import path
 from familia.views import index,  monstrar_familiar
 urlpatterns = [
       path('admin/', admin.site.urls),
-      path('familia/', monstrar_familiar), # nueva vista
+      path('familia/', monstrar_familiar), 
   ]
  
