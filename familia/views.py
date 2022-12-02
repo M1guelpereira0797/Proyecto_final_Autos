@@ -9,7 +9,7 @@ def index(request):
 
 def mostrar_familiar(request):
   lista_familiares = familia.objects.all()
-  return render(request, "familia/familiar.html", {"lista_familiares": lista_familiares})
+  return render(request, "familia/familia.html", {"lista_familiares": lista_familiares})
 
 ###def buscar(request):
 ### nombres=[ "Miguel", "Jose", "Enrique", "Santiago" ]
