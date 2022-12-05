@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from familia.models import familia
-from familia.forms import buscar_familia 
+from familia.forms import Buscar
 from django.views import View 
 def index(request):
     return render(request, "familia/familia.html")
@@ -24,7 +24,7 @@ def mostrar_familiar(request):
 ###return render(request, "familia/buscar.html", {"resultado": resuiltado})
 
 class buscar_familiar(View):
-    form_class = buscar_familia
+    form_class = Buscar
     template_name = 'familia/buscar_familia.html'
     initial = {"nombre":""}
     def get(self, request):
