@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from familia.models import familia
-
+from familia.forms import buscar_familia 
+from django.views import View 
 def index(request):
     return render(request, "familia/familia.html")
 
@@ -21,3 +22,20 @@ def mostrar_familiar(request):
 ### else:
 ### resultado="no hay match"
 ###return render(request, "familia/buscar.html", {"resultado": resuiltado})
+
+class BuscarFamiliar(View):
+    form_class = buscar_familia
+    template_name = 'familia/buscar_familia.html'
+    initial = {"nombre":""}
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form':form})
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            nombre = form.cleaned_data.get("nombre")
+            lista_familiares = familia.objects.filter(nombre__icontains=nombre).all() 
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'lista_familiares':lista_familiares})
+        return render(request, self.template_name, {"form": form})
