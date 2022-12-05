@@ -23,7 +23,7 @@ def mostrar_familiar(request):
 ### resultado="no hay match"
 ###return render(request, "familia/buscar.html", {"resultado": resuiltado})
 
-class BuscarFamiliar(View):
+class buscar_familiar(View):
     form_class = buscar_familia
     template_name = 'familia/buscar_familia.html'
     initial = {"nombre":""}
