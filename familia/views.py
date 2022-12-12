@@ -43,7 +43,7 @@ class buscar_familiar(View):
 class AltaFamiliar(View):
 
     form_class = familiaform
-    template_name = 'familia/alta_familiar.html'
+    template_name = 'familia/alta_familia.html'
     initial = {"nombre":"", "direccion":"", "numero_pasaporte":""}
 
     def get(self, request):
