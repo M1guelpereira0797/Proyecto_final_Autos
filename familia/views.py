@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from familia.models import familia
-from familia.forms import Buscar
+from familia.forms import Buscar, familiaform
 from django.views import View 
 def index(request):
     return render(request, "familia/familia.html")
@@ -42,7 +42,7 @@ class buscar_familiar(View):
 
 class AltaFamiliar(View):
 
-    form_class = familiaForm
+    form_class = familiaform
     template_name = 'familia/alta_familiar.html'
     initial = {"nombre":"", "direccion":"", "numero_pasaporte":""}
 
