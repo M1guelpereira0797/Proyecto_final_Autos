@@ -2,6 +2,8 @@ from django.shortcuts import render
 from familia.models import familia
 from familia.forms import Buscar, familiaform
 from django.views import View 
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+
 def index(request):
     return render(request, "familia/familia.html")
 
@@ -60,3 +62,25 @@ class AltaFamiliar(View):
                                                         'msg_exito': msg_exito})
         
         return render(request, self.template_name, {"form": form})
+
+class familialist(ListView):
+    model = familia
+
+class familiaCrear(CreateView):
+    model = familia
+    success_url=""
+    fields =["nombre", "direccion", "numero_pasaporte"]
+
+class familiaBorrar(DeleteView):
+    model = familia
+    success_url=""
+    
+
+class Actualizafamilia(UpdateView):
+    model = familia
+    success_url="/success_updated_messages.html"
+    fields =["nombre", "direccion", "numero_pasaporte"]
+
+
+
+   

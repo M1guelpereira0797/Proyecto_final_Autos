@@ -15,13 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from familia.views import index,  mostrar_familiar, buscar_familiar, AltaFamiliar
+from familia.views import index,  mostrar_familiar, buscar_familiar, AltaFamiliar, Actualizafamilia, familiaCrear, familialist, familiaBorrar 
 ###from blog.views import index as blog_index
 
-urlpatterns = [
+urlpatterns =[
       path('admin/', admin.site.urls),
       path('familia/', mostrar_familiar), 
       path('buscar_familia',  buscar_familiar.as_view()),
-      path('mi-familia/alta', AltaFamiliar.as_view())
+      path('familia/Alta_Familiar', AltaFamiliar.as_view()),
+      path('Actualizar_Familia/<int:pk>', Actualizafamilia.as_view()),
+       path('Lista_de_Familiares/', familialist.as_view()), 
+      path('Crear_Familiar', familiaCrear.as_view()),
+      path('Borrar_Familiar/<int:pk>/borrar', familiaBorrar.as_view()), 
+      path('Actuazlizar_dato_familiar /<int:pk>/actualizar', Actualizafamilia.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
+
   ]
+  
  
