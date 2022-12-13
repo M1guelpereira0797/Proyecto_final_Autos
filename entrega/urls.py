@@ -22,7 +22,7 @@ urlpatterns =[
       path('admin/', admin.site.urls),
       path('familia/', mostrar_familiar), 
       path('buscar_familia',  buscar_familiar.as_view()),
-      path('familia/Alta_Familiar', AltaFamiliar.as_view()),
+      path('Alta_Familia', AltaFamiliar.as_view()),
       path('Actualizar_Familia/<int:pk>', Actualizafamilia.as_view()),
        path('Lista_de_Familiares/', familialist.as_view()), 
       path('Crear_Familiar', familiaCrear.as_view()),

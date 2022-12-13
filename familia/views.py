@@ -16,14 +16,14 @@ def mostrar_familiar(request):
 
 ###def buscar(request):
 ### nombres=[ "Miguel", "Jose", "Enrique", "Santiago" ]
-##  query = request.GET["q"]
-### if query in nombres.
-###  resultado=nombres.index(query)
-###  indice= nombre.index(query) (parte 2)
-### resultado = nombres[ indice ]
-### else:
-### resultado="no hay match"
-###return render(request, "familia/buscar.html", {"resultado": resuiltado})
+ ###query = request.GET["q"]
+###if query in nombres:
+  ###resultado=nombres.index(query)
+  ###indice= nombre.index(query) (parte 2)
+  ###resultado = nombres[ indice ]
+###else:
+###  resultado="no hay match"
+###return render(request, "familia/buscar.html", {"resultado": resuiltado})###
 
 class buscar_familiar(View):
     form_class = Buscar
