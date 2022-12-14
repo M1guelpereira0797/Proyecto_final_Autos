@@ -15,19 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from familia.views import index,  mostrar_familiar, buscar_familiar, AltaFamiliar, Actualizafamilia, familiaCrear, familialist, familiaBorrar 
+from familia.views import index,  mostrar_familiar, buscar_familiar, AltaFamiliar, ActualizarFamiliar, BorrarFamiliar, familiaCrear, familialist, familiaBorrar 
 ###from blog.views import index as blog_index
 
 urlpatterns =[
       path('admin/', admin.site.urls),
       path('familia/', mostrar_familiar), 
       path('buscar_familia',  buscar_familiar.as_view()),
-      path('Alta_Familia', AltaFamiliar.as_view()),
-      path('Actualizar_Familia/<int:pk>', Actualizafamilia.as_view()),
-       path('Lista_de_Familiares/', familialist.as_view()), 
+      path('familia/Alta_Familia', AltaFamiliar.as_view()),
+      path('familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()),
+      path('familia/borrar/<int:pk>', BorrarFamiliar.as_view()),            
+      path('Lista_de_Familiares/', familialist.as_view()), 
       path('Crear_Familiar', familiaCrear.as_view()),
-      path('Borrar_Familiar/<int:pk>/borrar', familiaBorrar.as_view()), 
-      path('Actuazlizar_dato_familiar /<int:pk>/actualizar', Actualizafamilia.as_view()), # NUEVA RUTA PARA LISTAR FAMILIAR
+      ###path('familia/Borrar_Familiar/<int:pk>/borrar', familiaBorrar.as_view()), 
+      ###path('familia/Actualizar_dato_nuevoFamilia/<int:pk>', ActualizarFamiliar.as_view())
 
   ]
   
