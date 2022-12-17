@@ -3,7 +3,7 @@
 {% block contenido %}
 
 <!-- Prestar aatención a la variable familiar.id -->
-<form action="/familia/actualizar{{ familiar.id }}" method="post"> 
+<form action="/familia/actualizar/{{familiar.id}}" method="post"> 
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Actualizar">

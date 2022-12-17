@@ -50,7 +50,7 @@ class AltaFamiliar(View):
 
     def get(self, request):
         form = self.form_class(initial=self.initial)
-        return render(request, self.template_name, {'form':form})
+        return render(request, self.template_name, {"form":form})
 
     def post(self, request):
         form = self.form_class(request.POST)
@@ -71,7 +71,7 @@ class ActualizarFamiliar(View):
   def get(self, request, pk): 
       familiar = get_object_or_404(familia, pk=pk)
       form = self.form_class(instance=familiar)
-      return render(request, self.template_name, {'form':form,'familiar': familia})
+      return render(request, self.template_name, {'form':form,'familiar': familiar})
 
   # prestar atención ahora el method post recibe un parametro pk == primaryKey == identificador único
   def post(self, request, pk): 
