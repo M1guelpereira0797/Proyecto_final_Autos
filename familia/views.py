@@ -108,7 +108,7 @@ class familiaBorrar(DeleteView):
     success_url=""
     
 
-class Actualizafamilia(UpdateView):
+class familia_actualizar(UpdateView):
     model = familia
     success_url="/success_updated_messages.html"
     fields =["nombre", "direccion", "numero_pasaporte"]
