@@ -1,4 +1,6 @@
 from django.db import models
+
+
 class familia(models.Model):
     nombre =models.CharField(max_length=100)
     
@@ -6,7 +8,7 @@ class familia(models.Model):
     numero_pasaporte = models.IntegerField()
     def __str__(self):
       return f"{self.id} {self.nombre}, {self.direccion},{self.numero_pasaporte}"
-
+      
 class Vehiculos(models.Model):
     nombre_vehiculo= models.CharField(max_length=100)
     
